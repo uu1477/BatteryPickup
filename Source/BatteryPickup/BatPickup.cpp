@@ -28,13 +28,11 @@ void ABatPickup::Tick(float DeltaTime)
 	test.Y = NewLocation.Y + y1;
 	test.Z = NewLocation.Z;
 	
-	íf (x1*10 > 1.0 || y1*10 > 1.0)
+	if (x1*10 > 1.0 || y1*10 > 1.0)
 	{
 		SetActorLocation(test);
 	}
-
 		
-	SetActorLocation(test);
 
 	UE_LOG(LogTemp, Warning, TEXT("Location Coordinations: %d %d %d"), NewLocation.X, NewLocation.Y, NewLocation.Z);
 	UE_LOG(LogTemp, Warning, TEXT("mylocation is: %d %d %d"), Location1.X, Location1.Y, Location1.Z);
