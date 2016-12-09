@@ -50,5 +50,9 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spawning", meta = (AllowPrivateAccess = "true"))
 	class UBoxComponent* WhereToSpawn;
 
+    void SpawnPick();
+
+    float SpawnDelay;
+
 	
 };
