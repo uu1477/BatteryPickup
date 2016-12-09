@@ -34,16 +34,16 @@ public:
 
 protected:
     //The pickup to spawn
-    UPROPERTY(EdiAnywhere, Category = "Spawning")
+    UPROPERTY(EditAnywhere, Category = "Spawning")
     TSubclassOf<class APickup> WhatToSpawn;
 
     FTimerHandle SpawnTimer;
 
-    UPROPERTY(EdiAnywhere, BlueprintReadWrite, Category = "Spawning")
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spawning")
     float SpawnDelayRangeLow;
 
 
-    UPROPERTY(EdiAnywhere, BlueprintReadWrite, Category = "Spawning")
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spawning")
     float SpawnDelayRangeHigh;
 
 private:
