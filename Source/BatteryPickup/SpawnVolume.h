@@ -31,6 +31,21 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Spawning")
     void SetSpawningActive(bool bShouldSpawn);
 
+
+protected:
+    //The pickup to spawn
+    UPROPERTY(EdiAnywhere, Category = "Spawning")
+    TSubclassOf<class APickup> WhatToSpawn;
+
+    FTimerHandle SpawnTimer;
+
+    UPROPERTY(EdiAnywhere, BlueprintReadWrite, Category = "Spawning")
+    float SpawnDelayRangeLow;
+
+
+    UPROPERTY(EdiAnywhere, BlueprintReadWrite, Category = "Spawning")
+    float SpawnDelayRangeHigh;
+
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spawning", meta = (AllowPrivateAccess = "true"))
 	class UBoxComponent* WhereToSpawn;
