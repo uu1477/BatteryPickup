@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "BatteryCollector.h"
+#include "BatteryPickup.h"
 #include "SpawnVolume.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Pickup.h"
