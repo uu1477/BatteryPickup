@@ -28,8 +28,11 @@ void ABatPickup::Tick(float DeltaTime)
 	test.Y = NewLocation.Y + y1;
 	test.Z = NewLocation.Z;
 	
-	íf (x1 < 1.0 || y1 < 1.0)
-		
+	íf (x1*10 > 1.0 || y1*10 > 1.0)
+	{
+		SetActorLocation(test);
+	}
+
 		
 	SetActorLocation(test);
 
