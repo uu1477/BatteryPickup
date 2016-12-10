@@ -66,7 +66,7 @@ void ASpawnVolume::SpawnPickup()
 {
 	// If we have set something to spawn:
     //
-    if (WhatToSpawn = NULL)
+    if (WhatToSpawn == NULL)
     {
         UE_LOG(LogTemp, Error, TEXT("There is nothing to Spawn"));
     }
