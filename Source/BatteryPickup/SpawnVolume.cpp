@@ -65,6 +65,13 @@ void ASpawnVolume::SetSpawningActive(bool bShouldSpawn)
 void ASpawnVolume::SpawnPickup()
 {
 	// If we have set something to spawn:
+    //
+    if (WhatToSpawn = NULL)
+    {
+        UE_LOG(LogTemp, Error, TEXT("There is nothing to Spawn"));
+    }
+
+
 	if (WhatToSpawn != NULL)
 	{
 		// Check for a valid World: 
