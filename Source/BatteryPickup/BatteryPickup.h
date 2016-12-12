@@ -1,8 +1,31 @@
-// Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
+// Fill out your copyright notice in the Description page of Project Settings.
 
-#ifndef __BATTERYPICKUP_H__
-#define __BATTERYPICKUP_H__
+#pragma once
 
-#include "EngineMinimal.h"
+#include "Pickup.h"
+#include "BatteryPickup.generated.h"
 
-#endif
+/**
+ * 
+ */
+UCLASS()
+class BATTERYCOLLECTOR_API ABatteryPickup : public APickup
+{
+	GENERATED_BODY()
+	
+public:
+	// Sets default values for this actor's properties
+	ABatteryPickup();
+	
+	/** Override the WasCollected function - use Implementation because it's a Blueprint Native Event */
+	void WasCollected_Implementation() override;
+
+	/**Public way to access the battery's power level */
+	float GetPower();
+
+protected:
+	/**Set the amount of power the battery gives to the character */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
+	float BatteryPower;
+	
+};
