@@ -16,7 +16,7 @@ class BATTERYPICKUP_API ABatPickup : public APickup
 public:
 	ABatPickup();
 
-	virtual void Tick(float DeltaSeconds) override;
+//    virtual void Tick(float DeltaSeconds) override;
 	
 	
 };
