@@ -6,7 +6,7 @@
 #include "SpawnVolume.generated.h"
 
 UCLASS()
-class BATTERYCOLLECTOR_API ASpawnVolume : public AActor
+class BATTERYPICKUP_API ASpawnVolume : public AActor
 {
 	GENERATED_BODY()
 	
