@@ -6,7 +6,7 @@
 #include "Pickup.generated.h"
 
 UCLASS()
-class BATTERYCOLLECTOR_API APickup : public AActor
+class BATTERYPICKUP_API APickup : public AActor
 {
 	GENERATED_BODY()
 	
