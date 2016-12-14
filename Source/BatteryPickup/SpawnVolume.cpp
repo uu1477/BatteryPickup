@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "BatteryPickup.h"
+#include "BatteryCollector.h"
 #include "SpawnVolume.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Pickup.h"
@@ -65,13 +65,6 @@ void ASpawnVolume::SetSpawningActive(bool bShouldSpawn)
 void ASpawnVolume::SpawnPickup()
 {
 	// If we have set something to spawn:
-    //
-    if (WhatToSpawn == NULL)
-    {
-        UE_LOG(LogTemp, Error, TEXT("There is nothing to Spawn"));
-    }
-
-
 	if (WhatToSpawn != NULL)
 	{
 		// Check for a valid World: 

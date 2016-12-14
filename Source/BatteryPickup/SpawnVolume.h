@@ -6,7 +6,7 @@
 #include "SpawnVolume.generated.h"
 
 UCLASS()
-class BATTERYPICKUP_API ASpawnVolume : public AActor
+class BATTERYCOLLECTOR_API ASpawnVolume : public AActor
 {
 	GENERATED_BODY()
 	
@@ -20,39 +20,42 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
-    //Returns the WhereToSpawn suboject 
-    FORCEINLINE class UBoxComponent* GetWhereToSpawn() const{return WhereToSpawn;}
+	/**Returns the WhereToSpawn subobject */
+	FORCEINLINE class UBoxComponent* GetWhereToSpawn() const { return WhereToSpawn; }
 
-    //Find a random points within the BoxComponents
-    UFUNCTION(BlueprintPure, Category = "Spawning")
-    FVector GetRandomPointInVolume();
+	/** Find a random point within the BoxComponent */
+	UFUNCTION(BlueprintPure, Category = "Spawning")
+	FVector GetRandomPointInVolume();
 
-    //This function toggles whether or not the spawn volume spawns pickups
-    UFUNCTION(BlueprintCallable, Category = "Spawning")
-    void SetSpawningActive(bool bShouldSpawn);
-
+	/**This function toggles whether or not the spawn volume spawns pickups */
+	UFUNCTION(BlueprintCallable, Category = "Spawning")
+	void SetSpawningActive(bool bShouldSpawn);
 
 protected:
-    //The pickup to spawn
-    UPROPERTY(EditAnywhere, Category = "Spawning")
-    TSubclassOf<class APickup> WhatToSpawn;
+	/** The pickup to spawn*/
+	UPROPERTY(EditAnywhere, Category = "Spawning")
+	TSubclassOf<class APickup> WhatToSpawn;
 
-    FTimerHandle SpawnTimer;
+	FTimerHandle SpawnTimer;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spawning")
-    float SpawnDelayRangeLow;
+	/** Minimum spawn delay */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spawning")
+	float SpawnDelayRangeLow;
 
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spawning")
-    float SpawnDelayRangeHigh;
+	/** Maximum spawn delay */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spawning")
+	float SpawnDelayRangeHigh;
 
 private:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Spawning", meta = (AllowPrivateAccess = "true"))
+	/** Box Component to specify where pickups should be spawned */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Spawning", meta = (AllowPrivateAccess = "true"))
 	class UBoxComponent* WhereToSpawn;
 
-    void  SpawnPickup();
+	/** Handle spawning a new pickup */
+	void SpawnPickup();
 
-    float SpawnDelay;
+	/** The current spawn delay */
+	float SpawnDelay;
 
 	
 };
