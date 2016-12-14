@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "BatteryPichup.h"
+#include "BatteryPickup.h"
 #include "Pickup.h"
 
 
